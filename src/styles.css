@@ -1,0 +1,63 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.babyTitle {
+  color: lime;
+}
+
+.searchInput {
+  margin-top: 50px;
+  display: inline-block;
+}
+
+.searchTerm {
+  width: 30%;
+  border: 3px solid #00b4cc;
+  padding: 5px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9dbfaf;
+}
+
+.searchTerm:focus {
+  color: #00b4cc;
+}
+
+.square {
+  width: 25px;
+  height: 25px;
+  margin: 10px;
+}
+.container {
+  border: 2px double;
+  margin-top: 3%;
+  padding: 40px;
+}
+.btn-pink,
+.btn-blue {
+  margin: 1px;
+  color: white;
+}
+
+.btn-blue,
+.square-blue {
+  background-color: rgb(71, 71, 223);
+}
+
+.btn-pink,
+.square-pink {
+  background-color: rgb(190, 22, 78);
+}
+.square-pink-and-blue {
+  width: 55px;
+  height: 28px;
+  margin: 10px;
+  background-color: red;
+  background-image:
+    linear-gradient(
+      to right,
+      rgb(71, 71, 223) 50%,
+      rgb(190, 22, 78) 50%
+    );
+}
