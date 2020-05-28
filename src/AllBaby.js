@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./styles.css";
 
 import Search from "./Search";
+import Favourites from "./Favourites";
 
 const AllBaby = ({ data }) => {
   const [search, setSearch] = useState("");
@@ -51,6 +52,7 @@ const AllBaby = ({ data }) => {
         handleClickPink={handleClickPink}
         handleClickBoth={handleClickBoth}
       />
+      <Favourites />
       <div className="container">
         {state.map((el, i) => {
           return el.sex === "m" ? (

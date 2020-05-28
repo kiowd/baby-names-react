@@ -1,13 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;562;600;700&family=Press+Start+2P&display=swap");
+
 .App {
   font-family: sans-serif;
   text-align: center;
 }
 .babyTitle {
   color: lime;
+  font-family: "Press Start 2P", cursive;
+  letter-spacing: 3px;
+  font-weight: bolder;
+  margin-top: 35px;
 }
 
 .searchInput {
-  margin-top: 50px;
+  margin-top: 30px;
   display: inline-block;
 }
 
@@ -54,10 +60,49 @@
   height: 28px;
   margin: 10px;
   background-color: red;
-  background-image:
-    linear-gradient(
-      to right,
-      rgb(71, 71, 223) 50%,
-      rgb(190, 22, 78) 50%
-    );
+  background-image: linear-gradient(
+    to right,
+    rgb(71, 71, 223) 50%,
+    rgb(190, 22, 78) 50%
+  );
+}
+
+.favourites {
+  font-style: italic;
+  font-family: "Dancing Script", cursive;
+  border: 2px solid;
+  margin: 20px;
+  margin-left: 400px;
+  margin-right: 400px;
+  text-align: left;
+  padding-top: 17px;
+  padding-left: 20px;
+  font-size: 3rem;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: rgb(15, 173, 226);
+  }
+
+  .favourites {
+    font-style: italic;
+    border: 2px solid;
+    margin: 2px;
+    margin-left: 4px;
+    margin-right: 4px;
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 5px;
+    font-size: 1.5rem;
+  }
+
+  .searchTerm:focus {
+    color: #5c6e1cec;
+  }
+
+  .searchTerm {
+    width: 30%;
+    border: 3px solid #5c6e1cec;
+  }
 }
