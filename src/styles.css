@@ -106,3 +106,15 @@
     border: 3px solid #5c6e1cec;
   }
 }
+
+@media only screen and (max-width: 1200px) and (min-width: 600px) {
+  body {
+    background-color: rgb(15, 85, 109);
+  }
+
+  .favourites {
+    margin-left: 200px;
+    margin-right: 200px;
+    color: white;
+  }
+}

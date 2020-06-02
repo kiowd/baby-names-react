@@ -7,23 +7,25 @@ import Favourites from "./Favourites";
 const AllBaby = ({ data }) => {
   const [search, setSearch] = useState("");
   const [state, setState] = useState(data);
+  const [gender, setGender] = useState("both");
 
   const handleChange = e => {
     setSearch(e.target.value);
-    const lady = e.target.value;
+    const compare = e.target.value;
     setState(
-      data.filter(person =>
-        person.name.toLowerCase().includes(lady.toLowerCase())
-      )
+      gender === "both"
+        ? data.filter(person =>
+            person.name.toLowerCase().includes(compare.toLowerCase())
+          )
+        : data
+            .filter(person => person.sex === gender)
+            .filter(person =>
+              person.name.toLowerCase().includes(compare.toLowerCase())
+            )
     );
   };
 
-  // const results = !search
-  //   ? data
-  //   : data.filter(person =>
-  //       person.name.toLowerCase().includes(search.toLowerCase())
-  //     );
-
+  
   data.sort(function(a, b) {
     return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
   });
@@ -31,16 +33,19 @@ const AllBaby = ({ data }) => {
   const handleClick = e => {
     console.log("you clicked blue");
     setState(data.filter(person => person.sex === "m"));
+    setGender("m");
   };
 
   const handleClickPink = e => {
     console.log("you clicked pink");
     setState(data.filter(person => person.sex === "f"));
+    setGender("f");
   };
 
   const handleClickBoth = e => {
-    console.log("you clicked pink");
+    console.log("you clicked both");
     setState(data);
+    setGender("both");
   };
 
   return (
