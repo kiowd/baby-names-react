@@ -8,7 +8,7 @@ const Favourites = ({ favourite, setFavourite, setState, state }) => {
   };
   return (
     <div>
-      <p>
+      <p className="favourite">
         Favourites:
         {favourite.length > 0
           ? favourite.map((el, i) => {

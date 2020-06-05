@@ -67,17 +67,11 @@
   );
 }
 
-.favourites {
+.favourite {
   font-style: italic;
   font-family: "Dancing Script", cursive;
-  border: 2px solid;
-  margin: 20px;
-  margin-left: 400px;
-  margin-right: 400px;
-  text-align: left;
-  padding-top: 17px;
-  padding-left: 20px;
-  font-size: 3rem;
+  font-size: 2.5rem;
+  margin: 7px;
 }
 
 @media only screen and (max-width: 600px) {
