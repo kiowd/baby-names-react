@@ -8,6 +8,12 @@ const AllBaby = ({ data }) => {
   const [search, setSearch] = useState("");
   const [state, setState] = useState(data);
   const [gender, setGender] = useState("both");
+  const [favourite, setFavourite] = useState([]);
+
+  const addFav = baby => {
+    setFavourite([...favourite, baby]);
+    setState(state.filter((el, i) => el.name !== baby.name));
+  };
 
   const handleChange = e => {
     setSearch(e.target.value);
@@ -25,10 +31,10 @@ const AllBaby = ({ data }) => {
     );
   };
 
-  
-  data.sort(function(a, b) {
-    return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
-  });
+  state &&
+    state.sort(function(a, b) {
+      return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
+    });
 
   const handleClick = e => {
     console.log("you clicked blue");
@@ -57,15 +63,30 @@ const AllBaby = ({ data }) => {
         handleClickPink={handleClickPink}
         handleClickBoth={handleClickBoth}
       />
-      <Favourites />
+      <Favourites
+        favourite={favourite}
+        setFavourite={setFavourite}
+        setState={setState}
+        state={state}
+      />
       <div className="container">
         {state.map((el, i) => {
           return el.sex === "m" ? (
-            <button type="button" className="btn btn-blue" key={i}>
+            <button
+              type="button"
+              className="btn btn-blue"
+              key={i}
+              onClick={() => addFav(el)}
+            >
               {el.name}
             </button>
           ) : (
-            <button type="button" className="btn btn-pink" key={i}>
+            <button
+              type="button"
+              className="btn btn-pink"
+              key={i}
+              onClick={() => addFav(el)}
+            >
               {el.name}
             </button>
           );
